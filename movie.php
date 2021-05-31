@@ -6,17 +6,31 @@ class Movie {
 
     //ATTRIBUTI/PROPRIETA'
     public $title;
+    public $original_title;
+    public $cast;
+    public $genre;
+    public $duration;
+    public $year;
     public $distribuited_by;
     public $director;
+    public $poster;
     public $plot;
+    
+    
 
 
 
     //COSTRUTTORE
-    function __construct($title, $distribuited_by, $director, $plot) {
+    function __construct($title, $original_title, $cast, $genre, $duration, $year, $distribuited_by, $director, $poster, $plot) {
         $this->title = $title;
+        $this->original_title = $original_title;
+        $this->cast = $cast;
+        $this->genre = $genre;
+        $this->duration = $duration;
+        $this->year = $year;
         $this->distribuited_by = $distribuited_by;
         $this->director = $director;
+        $this->poster = $poster;
         $this->plot = $plot;
     }
 

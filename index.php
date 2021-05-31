@@ -24,15 +24,22 @@ require_once __DIR__ . '/movie-data.php';
             <?php 
             //Movies Lists
             foreach($movies as $movie) {
-                $new_movie = new Movie($movie['title'], $movie['distribuited_by'], $movie['director'], $movie['plot']); ?>
+                $new_movie = new Movie($movie['title'], $movie['original_title'], $movie['cast'], $movie['genre'],
+                $movie['duration'], $movie['year'], $movie['distribuited_by'], $movie['director'], $movie['poster'], $movie['plot'],); ?>
             
                 <article>
                     <h2> Titolo: <?php echo $new_movie->title; ?> </h2>
-                    <h3> Distribuzione: <?php echo $new_movie->distribuited_by; ?> </h3>
-                    <h3> Regista: <?php echo $new_movie->director; ?> </h3>
+                    <h2> Titolo Originale: <?php echo $new_movie->original_title; ?> </h2>
+                    <h3> Cast: <?php echo $new_movie->cast; ?> </h3>
+                    <h3> Genere: <?php echo $new_movie->genre; ?> </h3>
+                    <h3>Durata: <?php echo $new_movie->duration; ?></h3>
+                    <h3>Anno: <?php echo $new_movie->year; ?> </h3>
+                    <h3>Distribuzione <?php echo $new_movie->distribuited_by; ?> </h3>
+                    <h3> Regia: <?php echo $new_movie->director; ?> </h3>
+                    <img src="<?php echo $new_movie->poster; ?>" alt="poster">
                     <p> Trama: <?php echo $new_movie->getExcerpt(); ?> (...) </p>
+                    <br>
                 </article>
-
             <?php } ?>
             
             
