@@ -19,6 +19,12 @@ class Movie {
         $this->director = $director;
         $this->plot = $plot;
     }
+
+    //GET EXCERPT
+    public function getExcerpt() {
+        $sub = substr($this->plot, 0, 810); //cosa voglio vedere, da dove parto e quanti caratteri max
+        return $sub;
+    }
 }
 
 
@@ -46,6 +52,7 @@ viene uccisa dai tre dalmata della Baronessa: una morte di cui Estella si ritien
 intenta a campare di furtarelli con gli amici Jasper e Horace, ma con ancora in testa il sogno di fare la stilista: magari proprio per la celebre Baronessa.';*/
 
 var_dump($movie1);
+echo '<p>'. $movie1->getExcerpt() . '(...)</p>';
 
 //Seconda Istanza
 $movie2 = new Movie('The Witches',
@@ -67,7 +74,7 @@ un hotel di lusso dove lavora un loro cugino, senza sapere, però, che proprio i
 E che la tremenda Strega suprema ha intenzione di trasformare tutti i bambini del mondo in topi.';*/
 
 var_dump($movie2);
-
+echo '<p>'. $movie2->getExcerpt() . '(...)</p>';
 
 //Terza Istanza
 $movie3 = new Movie('Sul più bello',
@@ -91,5 +98,6 @@ perché Marta, per sua stessa ammissione, esprime meglio il proprio sex appeal d
 con Arturo Selva, l\'uomo più bello (e ricco) di Torino, non la costringe a confrontarsi con la realtà.';*/
 
 var_dump($movie3);
+echo '<p>'. $movie3->getExcerpt() . '(...)</p>';
 
 ?>
